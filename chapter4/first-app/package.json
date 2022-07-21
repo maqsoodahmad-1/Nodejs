@@ -1,0 +1,20 @@
+{
+  "name": "first-app",
+  "version": "1.0.0",
+  "description": "My first app",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Maqsood ahmad",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "errorhandler": "^1.5.1",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0"
+  }
+}
