@@ -1,4 +1,8 @@
-/project/node_modules
-/chapter4/first-app/node_modules
-/chapter1/test-api/node_modules
-/chapter1/test-app/node_modules
+**/project/node_modules
+**/chapter4/first-app/node_modules
+**/chapter1/test-api/node_modules
+**/Express/myapp/node_modules
+**/chapter1/test-app/node_modules
+**/Express/expressjs/myapp/node_modules
+**/Express/expressjs/node_modules
+**/Express/myapp/myapp/node_modules
