@@ -1,8 +1,94 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/*doing some styling for container class*/
+.container-1, .container-2,.container-3,.container-4,.container-5 {
+    margin: 0 auto;/*giving 1 pixal margin to container class*/
+    border: 1px solid black;/*1 pixel solid black border*/
+    width: 75%;
+    text-align: center;
+
 }
 
-a {
-  color: #00B7FF;
+.flex-box-container-1, .flex-box-container-2,.flex-box-rps,.flex-box-pick-my-color,.flex-blackjack-row-1,
+.flex-blackjack-row-2,.flex-blackjack-row-3{
+    display: flex;/*displaying flex box contianer*/
+    border: 1px solid yellow;
+    padding: 10px;
+    flex-wrap:wrap ;
+    justify-content: space-around;/*giving space between two buttons which are inside flex box*/
+    flex-direction: row;/*givig direction to buttons which are in a flec box*/
+}
+
+.flex-blackjack-row-1{
+    background: url('4.jpeg') center;
+    color: #ffff;
+}
+
+.flex-blackjack-row-1 div{
+    flex: 1;
+    border: 1px solid yellow;
+    padding: 10px;
+    text-align: center;
+    height: 350px;
+}
+
+.flex-blackjack-row-1 img{
+    width: 25%;
+    padding: 10px;
+}
+
+.flex-blackjack-row-2{
+    background: url('4.jpeg') center;
+    color: #ffff;
+} 
+.flex-blackjack-row-2 div{
+    border: 1px solid yellow;
+    padding: 10px;
+}
+
+.flex-blackjack-row-2 button
+{
+    border: 1px solid yellow;
+    padding: 10px;    
+}
+
+table ,th,td{
+    padding: 5px;
+    border: 1px solid black;
+}
+.flex-box-container-1 ,.flex-box-rps{/*some styling for buttons which are inside flex box*/
+    display: flex;
+    padding: 10px;
+    border: 1px solid black;
+    align-items:center;/*aligning buttons center */
+
+}
+/*
+.container-2{
+    margin: 0 auto;
+    text-align: center;/*aligns text to center of box*/
+    border: 1px solid red;
+    width: 75%;*/
+
+}*/
+
+/*commenting because code repeetion as container-1 and container-2 are same
+  also flex-box-container-1 and flex-box-container-2 are same*/
+/*.flex-box-container-2{
+    display: flex;/*activates div to bcome a flex box and any element inside it becomes a flex item*/
+    border: 1px solid blue;
+    flex-wrap:wrap;
+    justify-content:space-around;
+   
+}*/
+.flex-box-container-2,.flex-box-rps img
+{
+    border:1px solid green;
+    padding:5px;/*padding between each image */
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.7);
+}
+
+/*for every image element in html we are going to define what 
+should happen on hover/clicking in he image*/
+.flex-box-rps img:hover
+{
+    box-shadow: 0px 10px 50 px rgb(19, 29, 158);
 }
