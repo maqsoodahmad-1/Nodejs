@@ -5,4 +5,6 @@
 **/chapter1/test-app/node_modules
 **/Express/expressjs/myapp/node_modules
 **/Express/expressjs/node_modules
+**/node_modules
 **/Express/myapp/myapp/node_modules
+**/chapter4/mongodb/mongotest/node_modules
