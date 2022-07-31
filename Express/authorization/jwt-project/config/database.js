@@ -1,0 +1,24 @@
+const mongoose = require('mongoose');
+
+// const { MONGO_URI } = process.env;
+
+exports.connect = () => {
+// connecting to the database
+  mongoose
+      .connect("mongodb+srv://maqsodahmad:shabnamjaan%401@cluster0.04z4jnr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+      , {
+       useNewUrlParser: true,
+      //  useUnifiedTopology:true,
+      //  useCreateIndex: true,
+      //  useFindAndModify: false,
+      })
+    .then( () => {
+    console.log("successfully connected to the database");
+   })
+    .catch((error) => {
+      console.log("Data base connection failed exiting now...");
+      console.log(error);
+      process.exit(1);
+     });
+}
+
