@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-// const { MONGO_URI } = process.env;
+//  const { MONGO_URI } = process.env;
 
 exports.connect = () => {
 // connecting to the database
   mongoose
-      .connect("mongodb+srv://maqsodahmad:shabnamjaan%401@cluster0.04z4jnr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+      .connect("mongodb://localhost/user"
       , {
        useNewUrlParser: true,
       //  useUnifiedTopology:true,

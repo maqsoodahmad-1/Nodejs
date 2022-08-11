@@ -1,7 +1,7 @@
 const {MongoClient} = require('mongodb');
 async function main() {
-    const uri = "mongodb+srv://maqsodahmad:shabnamjaan%401@cluster0.04z4jnr.mongodb.net/test?retryWrites=true&w=majority"
-    const client = new MongoClient(uri);
+    const URI = "mongodb://localhost:27107"
+    const client = new MongoClient(URI);
    try {
         await client.connect();
         await listDataBase(client);

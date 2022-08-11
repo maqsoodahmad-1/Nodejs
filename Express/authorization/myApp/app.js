@@ -1,4 +1,5 @@
 var mongoose = require("mongoose");
+var conn = require("./config/database")
 var express = require("express");
 var passport = require("passport");
 var bodyParser = require("body-parser");
@@ -28,8 +29,8 @@ passport.use(new LocalStrategy(User.authenticate()));
 //=====================
 // Showing home page
 app.get("/", function (req, res) {
-res.render('register', {
-title: 'Registration Page',
+res.render('index', {
+title: 'Website',
 name: '',
 email: '',
 password: ''    
@@ -56,12 +57,21 @@ User.register(new User({ email: email }),
 password, function (err, user) {
 if (err) {
 console.log(err);
- return res.render('register.ejs');
+
+ return res.render('register.',{
+    title:"Home Page",
+    messages: "Failed to register try again"
+ 
+ });
 }
 passport.authenticate("local")(
 req, res, function () {
 req.flash('success', 'You have logged in')
-res.render("home");
+res.render("home",{
+    title:"Home Page",
+    messages: "Successfully Registered",
+
+});
 });
 });
 });

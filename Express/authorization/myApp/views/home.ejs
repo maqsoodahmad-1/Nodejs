@@ -9,11 +9,11 @@
 </head>
 <body>
 <div class="container">
-<% if (messages.error) { %>
-<p style="color:red"><%- messages.error %></p>
+<% if (error) { %>
+<p style="color:red"><%- error %></p>
 <% } %>
-<% if (messages.success) { %>
-<p style="color:green"><%- messages.success %></p>
+<% if (success) { %>
+<p style="color:green"><%- success %></p>
 <% } %>
 <div class="card">
 <div class="card-header">
