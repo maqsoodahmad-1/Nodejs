@@ -87,7 +87,7 @@ router.post('/login', async (req, res) => {
 })
 
 //get request 
-router.get('/get/:name', auth, async(req, res) => {
+router.get('/get/:name', /*auth,*/   async(req, res) => {
     const name = req.params.email
    session = req.session;
    session.user_id = req.body.email;
