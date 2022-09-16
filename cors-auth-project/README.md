@@ -6,12 +6,12 @@
 -***Mongodb uri***  
 -***Postman for hitting the api's***  
 ### Description
-1)-> Created the api for user registeration where email id will be unique for every user. 
-2)-> User password is hashed using the bcrypt js module of node and hashed password is stored in the database. 
-3)-> Authorization has also been kept using the jwt token so that only authorized user can access some routes.  
+1)-> Created the api for user registeration where email id will be unique for every user.  
+2)-> User password is hashed using the bcrypt js module of node and hashed password is stored in the database.   
+3)-> Authorization has also been kept using the jwt token so that only authorized user can access some routes.   
 4)-> Api for user login has been created.  
 5)->Session is also maintained using the express-session module of the node js.
-6)->Mongo db is used as a database.  
+6)->Mongo db is used as a database.   
 #### How to run the project in your local system  
 1)-> Make a fork and make a clone of the project in your local system.  
 2)-> Run the following command ***npm i*** so that all the dependencies listed in the package.json are installed.  
