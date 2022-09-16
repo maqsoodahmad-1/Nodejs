@@ -1,10 +1,10 @@
 ## Basic API's for CRUD operations
 **API's in the nodejs where i performed the CRUD operation on the user**
-## Requirements for the project 
--***Node.js installed***
--***npm working***
--***Mongodb uri***
--***Postman for hitting the api's***
+## Requirements for the project. 
+-***Node.js installed  ***
+-***npm working  ***
+-***Mongodb uri  ***
+-***Postman for hitting the api's  ***
 ### Description
 **1)-> Created the api for user registeration where email id will be unique for every user.**
 **2)-> User password is hashed using the bcrypt js module of node and hashed password is stored**
