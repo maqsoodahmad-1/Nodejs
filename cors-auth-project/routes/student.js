@@ -3,26 +3,29 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const create_session = require('../middleware/session')
-const User = require('../model/user')
+const User = require('../model/student')
 let session = require("express-session");
 const auth = require('../middleware/auth');
-const upload = require('../middleware/imageUpload')
+const {roles} =require('../utills/constants')
 
-router.post('/register', upload.single('ProductImage'), async (req, res) => {
+// const upload = require('../middleware/imageUpload')
+
+router.post('/register',/*upload.single('ProductImage'),*/ async (req, res) => {
     //register logic goes here 
     try {
-        console.log(req.file);
-        const filepath = req.file.path;
-        const { first_name, last_name, email, password } = req.body;
-        console.log(first_name, last_name, email, password);
+        // console.log(req.file);
+        // const filepath = req.file.path;
+        const { first_name, last_name, email,contactNo, password,address,confirmPassword } = req.body;
+        console.log(first_name, last_name, email, contactNo,password,address,confirmPassword);
         //validate user input
-        if (!(first_name && last_name && email && password )) {
+        if (!(first_name && last_name && email && password,contactNo,address,confirmPassword )) {
             return res.send('All inputs are required')
         }   
         //check if user already exists
         const oldUser = await User.findOne({ email });
-        if (oldUser) {
-            return res.send("user with this email already exists:Please Login")
+        const oldUser1 = await User.findOne({contactNo})
+        if (oldUser || oldUser1) {
+            return res.send("user with this email OR Number already exists:Please Login")
         }
         session = req.session;
         session.user_id = req.body.email;
@@ -33,7 +36,9 @@ router.post('/register', upload.single('ProductImage'), async (req, res) => {
             first_name: first_name,
             last_name: last_name,
             email: email.toLowerCase(),
-            productImage:filepath,
+            address:address,
+            contactNo:contactNo,
+            // productImage:filepath,
             password: encryptedPassword,
             session: session
         })
@@ -45,6 +50,9 @@ router.post('/register', upload.single('ProductImage'), async (req, res) => {
         );
         user.token = token
         console.log(token);
+        if(email===process.env.ADMIN_EMAIL.toLowerCase()){
+            user.role = roles.admin
+        }
         return res.status(201).json(user)
     } catch (err) {
         console.log(err);
@@ -88,11 +96,11 @@ router.post('/login', async (req, res) => {
 
 //get request 
 router.get('/get/:name', /*auth,*/   async(req, res) => {
-    const name = req.params.email
-   session = req.session;
-   session.user_id = req.body.email;
-   console.log(session.user_id)
-   if (session.user_id) {
+    const name = req.params.name
+//    session = req.session;
+//    session.user_id = req.body.email;
+//    console.log(session.user_id)
+   if (session.user_id=1) {
        const user = await User.find({name}).select("first_name last_name email _id");
        console.log(user);
        res.send(user)
@@ -152,3 +160,9 @@ router.post('/welcome', /*cors(),*/ auth, (req, res) => {
 })
 module.exports = router;
 
+//localhost:8086/user/register
+//localhost:8086/user/login
+//localhost:8086/user/get/name
+//localhost:8086/institute/register
+//localhost:8086/institute/login
+//localhost:8086/com./complain

@@ -6,7 +6,7 @@ const sessionOptions = sessions({
     store:MongoStore.create({
         mongoUrl:process.env.MONGO_URI,
         ttl:1000*60,
-        collectionName:'Sessio',
+        collectionName:'Session',
         autoRemove:'native'
     }),
     secret: process.env.secret,
