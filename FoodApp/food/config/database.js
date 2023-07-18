@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 exports.connect = () => {
     //connecting to the database
-    mongoose.connect("mongodb+srv://maqsodahmad:talimaqsood@cluster0.1gohczx.mongodb.net/FoodApp?retryWrites=true&w=majority",{
+    mongoose.connect("",{
     
     })
 
